@@ -31,6 +31,7 @@ clean:
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/../docs
 	-touch $(BUILDDIR)/../docs/.nojekyll
+	-echo 'docs.vairogs.com' > $(BUILDDIR)/../docs/CNAME
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
