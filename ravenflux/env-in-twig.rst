@@ -6,7 +6,7 @@ github: https://github.com/ravenflux/env-in-twig
 Installation
 ------------
 
-.. code-block:: terminal
+.. code-block:: twig
 
     $ composer require ravenflux/env-in-twig
 

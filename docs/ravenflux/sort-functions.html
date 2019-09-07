@@ -26,6 +26,8 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="php-functions" href="php-functions.html" />
     <link rel="prev" title="env-in-twig" href="env-in-twig.html" /> 
 
@@ -81,7 +83,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../nameisis.html">Nameisis</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../ravenflux.html">RavenFlux</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="env-in-twig.html">env-in-twig</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">sort-functions</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">sort-functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
 </ul>
@@ -142,7 +144,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/ravenflux/sort-functions.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/ravenflux/sort-functions.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -160,31 +162,31 @@
 <p>github: <a class="reference external" href="https://github.com/ravenflux/sort-functions">https://github.com/ravenflux/sort-functions</a></p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<div class="literal-block"><div class="highlight-terminal"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">$</span> composer require ravenflux/sort-functions
+<div class="highlight-twig notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="x">$ composer require ravenflux/sort-functions</span>
 </pre></div>
-</td></tr></table></div></div>
-<div class="admonition-wrapper">
-<div class="admonition tip"><p class="first admonition-title">Tip</p>
-<p class="last">If you are using this library inside a Symfony application, it will be configured for you using flex
+</td></tr></table></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you are using this library inside a Symfony application, it will be configured for you using flex
 recipe and config file will be created in config/packages/ravenflux_sort_functions.yaml</p>
-</div></div>
+</div>
 </div>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<div class="literal-block"><div class="highlight-twig"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class="highlight-twig notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">user</span> <span class="k">in</span> <span class="nv">users</span><span class="o">|</span><span class="nf">usort</span><span class="o">(</span><span class="s1">&#39;name&#39;</span><span class="o">)</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">    </span><span class="cp">{{</span> <span class="nv">user.name</span> <span class="cp">}}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
 </pre></div>
-</td></tr></table></div></div>
-<div class="literal-block"><div class="highlight-twig"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</td></tr></table></div>
+<div class="highlight-twig notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">user</span> <span class="k">in</span> <span class="nv">users</span><span class="o">|</span><span class="nf">usort</span><span class="o">(</span><span class="s1">&#39;name&#39;</span><span class="o">,</span> <span class="s1">&#39;DESC&#39;</span><span class="o">)</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">    </span><span class="cp">{{</span> <span class="nv">user.name</span> <span class="cp">}}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
 </pre></div>
-</td></tr></table></div></div>
+</td></tr></table></div>
 </div>
 </div>
 
@@ -235,12 +237,13 @@ recipe and config file will be created in config/packages/ravenflux_sort_functio
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
 
   
 

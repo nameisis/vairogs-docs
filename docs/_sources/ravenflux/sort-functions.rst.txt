@@ -1,12 +1,12 @@
 sort-functions
-===========
+==============
 
 github: https://github.com/ravenflux/sort-functions
 
 Installation
 ------------
 
-.. code-block:: terminal
+.. code-block:: twig
 
     $ composer require ravenflux/sort-functions
 

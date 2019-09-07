@@ -5,7 +5,6 @@ import sys, os
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.append(os.path.abspath('_themes/_exts'))
 
 # adding PhpLexer
 from sphinx.highlighting import lexers
@@ -13,7 +12,6 @@ from pygments.lexers.compiled import CLexer
 from pygments.lexers.special import TextLexer
 from pygments.lexers.text import RstLexer
 from pygments.lexers.web import PhpLexer
-from symfonycom.sphinx.lexer import TerminalLexer
 
 # -- General configuration -----------------------------------------------------
 
@@ -24,8 +22,7 @@ from symfonycom.sphinx.lexer import TerminalLexer
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
     'sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.todo',
-    'sensio.sphinx.refinclude', 'sensio.sphinx.configurationblock', 'sensio.sphinx.phpcode', 'sensio.sphinx.bestpractice', 'sensio.sphinx.codeblock',
-    'symfonycom.sphinx'
+    'sensio.sphinx.refinclude', 'sensio.sphinx.configurationblock', 'sensio.sphinx.phpcode', 'sensio.sphinx.codeblock'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -96,14 +93,12 @@ lexers['php-symfony'] = PhpLexer(startinline=True)
 lexers['rst'] = RstLexer()
 lexers['varnish3'] = CLexer()
 lexers['varnish4'] = CLexer()
-lexers['terminal'] = TerminalLexer()
 
 config_block = {
     'apache': 'Apache',
     'markdown': 'Markdown',
     'nginx': 'Nginx',
     'rst': 'reStructuredText',
-    'terminal': 'Terminal',
     'varnish3': 'Varnish 3',
     'varnish4': 'Varnish 4'
 }
