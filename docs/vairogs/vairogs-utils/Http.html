@@ -191,18 +191,59 @@
 <ul class="simple">
 <li><p>Returns <code class="docutils literal notranslate"><span class="pre">schema</span></code> of given $request</p></li>
 </ul>
+<div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * @param Request $request</span>
+<span class="sd"> *</span>
+<span class="sd"> * @return string</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">getSchema</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
 <div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">Http</span><span class="o">::</span><span class="na">getSchema</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">);</span> <span class="c1"># http:// or https://</span>
 </pre></div>
 </td></tr></table></div>
 <ul class="simple">
 <li><p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if given $request uses <code class="docutils literal notranslate"><span class="pre">https</span></code> schema</p></li>
 </ul>
+<div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * @param Request $request</span>
+<span class="sd"> *</span>
+<span class="sd"> * @return bool</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">useHttps</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
 <div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">Http</span><span class="o">::</span><span class="na">useHttps</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">);</span> <span class="c1"># true or false</span>
 </pre></div>
 </td></tr></table></div>
 <ul class="simple">
 <li><p>Returns <code class="docutils literal notranslate"><span class="pre">client</span> <span class="pre">ip</span></code> from current <code class="docutils literal notranslate"><span class="pre">http</span></code> $request</p></li>
 </ul>
+<div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * @param Request $request</span>
+<span class="sd"> * @param bool $trust</span>
+<span class="sd"> *</span>
+<span class="sd"> * @return string</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">getRemoteIp</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nv">$trust</span> <span class="o">=</span> <span class="k">false</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
 <div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">Http</span><span class="o">::</span><span class="na">getRemoteIp</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span> <span class="c1"># 127.0.0.1</span>
 </pre></div>
 </td></tr></table></div>
@@ -215,6 +256,19 @@
 <ul class="simple">
 <li><p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if given $path is <code class="docutils literal notranslate"><span class="pre">absolute</span></code></p></li>
 </ul>
+<div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * @param $path</span>
+<span class="sd"> *</span>
+<span class="sd"> * @return bool</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">isAbsolute</span><span class="p">(</span><span class="nv">$path</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
 <div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
