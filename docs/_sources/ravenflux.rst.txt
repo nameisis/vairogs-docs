@@ -1,6 +1,8 @@
 RavenFlux
 =========
 
+    Useful Twig functions and filters
+
 .. toctree::
     :maxdepth: 2
     :glob:

@@ -1,9 +1,9 @@
 php-functions
 =============
 
-github: https://github.com/ravenflux/php-functions
+``github``: https://github.com/ravenflux/php-functions
 
-Twig extension that implements a way to use native PHP functions and filters in Twig template.
+    Twig extension that implements a way to use native PHP functions and filters in Twig template
 
 Installation
 ------------
@@ -11,15 +11,6 @@ Installation
 .. code-block:: console
 
     $ composer require ravenflux/php-functions
-
-Function VS Filter | `source <https://stackoverflow.com/a/18867285/9743366>`_
------------------------------------------------------------------------------
-
-.. tip::
-
-    * A ``function`` is used when you need to compute things to render the result.
-
-    * A ``filter`` is a way to transform the displayed data.
 
 Configuration
 -------------
@@ -45,6 +36,15 @@ Configuration
             tags:
                 -
                     name: twig.extension
+
+Function VS Filter | `source <https://stackoverflow.com/a/18867285/9743366>`_
+-----------------------------------------------------------------------------
+
+.. tip::
+
+    * A ``function`` is used when you need to compute things to render the result.
+
+    * A ``filter`` is a way to transform the displayed data.
 
 Usage
 -----

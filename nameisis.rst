@@ -1,6 +1,8 @@
 Nameisis
 ========
 
+    Small Symfony utility libraries
+
 .. toctree::
     :maxdepth: 2
     :glob:

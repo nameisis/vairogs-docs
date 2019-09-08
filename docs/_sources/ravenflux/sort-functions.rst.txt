@@ -1,9 +1,9 @@
 sort-functions
 ==============
 
-github: https://github.com/ravenflux/sort-functions
+``github``: https://github.com/ravenflux/sort-functions
 
-Twig extension that implements sorting functions in Twig template.
+    Twig extension that implements sorting functions in Twig template
 
 Installation
 ------------
