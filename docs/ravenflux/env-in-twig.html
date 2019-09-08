@@ -84,6 +84,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../ravenflux.html">RavenFlux</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">env-in-twig</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
 </ul>
 </li>
@@ -160,16 +161,35 @@
   <div class="section" id="env-in-twig">
 <h1>env-in-twig<a class="headerlink" href="#env-in-twig" title="Permalink to this headline">¶</a></h1>
 <p>github: <a class="reference external" href="https://github.com/ravenflux/env-in-twig">https://github.com/ravenflux/env-in-twig</a></p>
+<p>Twig extension that implements getenv in Twig template.</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-twig notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="x">$ composer require ravenflux/env-in-twig</span>
+<div class="highlight-console notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">$</span> composer require ravenflux/env-in-twig.
 </pre></div>
 </td></tr></table></div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you are using this library inside a Symfony application, it will be configured for you using flex
-recipe and config file will be created in config/packages/ravenflux_env_in_twig.yaml</p>
+recipe and config file will be created in <code class="docutils literal notranslate"><span class="pre">config/packages/ravenflux_env_in_twig.yaml</span></code></p>
 </div>
+<div class="highlight-yaml notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># config/packages/ravenflux_env_in_twig.yaml</span>
+<span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">ravenflux.twig.extension.env_in_twig</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">class</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">RavenFlux\Twig\EnvInTwigExtension</span>
+        <span class="l l-Scalar l-Scalar-Plain">tags</span><span class="p p-Indicator">:</span>
+            <span class="p p-Indicator">-</span>
+                <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">twig.extension</span>
+</pre></div>
+</td></tr></table></div>
 </div>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
