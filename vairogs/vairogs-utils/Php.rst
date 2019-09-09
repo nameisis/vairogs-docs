@@ -38,7 +38,7 @@ Php
 .. code-block:: php
 
     $model = new Foo();
-    echo Php::call(function() use ($model){
+    Php::call(function() use ($model){
         return $model->upper('test');
     }, $model, true); # Test
 
@@ -56,9 +56,9 @@ Php
 .. code-block:: php
 
     $model = new Foo();
-    echo $model->getBar(); # Bar
+    $model->getBar(); # Bar
     Php::hijackSet($model, 'bar', 'foo');
-    echo $model->getBar(); # Foo
+    $model->getBar(); # Foo
 
 - Get value of any class variable (``any visibility``)
 
@@ -75,4 +75,43 @@ Php
 .. code-block:: php
 
     $model = new Foo();
-    echo Php::hijackGet($model, 'bar'); # bar
+    Php::hijackGet($model, 'bar'); # bar
+
+- Get bool value from variable
+
+.. code-block:: php
+
+    /**
+     * @param $value
+     *
+     * @return bool
+     */
+    public static function boolval($value): bool;
+
+.. code-block:: php
+
+    Php::boolval(1);      # true
+    Php::boolval(2);      # false
+    Php::boolval(true);   # true
+    Php::boolval('yes');  # true
+    Php::boolval('true'); # true
+    Php::boolval('n');    # false
+
+- Returns constants of given class
+
+.. code-block:: php
+
+    /**
+     * @param string $class
+     *
+     * @return array
+     * @throws VairogsException
+     * @throws ReflectionException
+     */
+    public static function getClassConstants(string $class): array;
+
+.. code-block:: php
+
+    use Symfony\Component\HttpFoundation\Response;
+
+    Php::getClassConstants(Response::class); # ['HTTP_CONTINUE' => 100, 'HTTP_SWITCHING_PROTOCOLS' => 101, ...]

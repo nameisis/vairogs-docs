@@ -30,11 +30,11 @@ Http
      *
      * @return bool
      */
-    public static function useHttps(Request $request): bool;
+    public static function isHttps(Request $request): bool;
 
 .. code-block:: php
 
-    Http::useHttps(Request $request); # true or false
+    Http::isHttps(Request $request); # true or false
 
 - Returns ``client ip`` from current ``http`` $request
 
@@ -76,3 +76,17 @@ Http
     Http::isAbsolute('docs.vairogs.com'); # false
 
     Http::isAbsolute('//docs.vairogs.com'); # true
+
+- Return all supported ``HTTP Methods``
+
+.. code-block:: php
+
+    /**
+     * @return array
+     * @throws ReflectionException
+     */
+    public static function getMethods(): array;
+
+.. code-block:: php
+
+    Http::getMethods(); # ['HEAD', 'GET', 'POST', ...]

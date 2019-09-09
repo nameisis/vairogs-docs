@@ -241,7 +241,7 @@
 2
 3
 4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nv">$model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">();</span>
-<span class="k">echo</span> <span class="nx">Php</span><span class="o">::</span><span class="na">call</span><span class="p">(</span><span class="k">function</span><span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$model</span><span class="p">){</span>
+<span class="nx">Php</span><span class="o">::</span><span class="na">call</span><span class="p">(</span><span class="k">function</span><span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$model</span><span class="p">){</span>
     <span class="k">return</span> <span class="nv">$model</span><span class="o">-&gt;</span><span class="na">upper</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">);</span>
 <span class="p">},</span> <span class="nv">$model</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span> <span class="c1"># Test</span>
 </pre></div>
@@ -266,9 +266,9 @@
 2
 3
 4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nv">$model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">();</span>
-<span class="k">echo</span> <span class="nv">$model</span><span class="o">-&gt;</span><span class="na">getBar</span><span class="p">();</span> <span class="c1"># Bar</span>
+<span class="nv">$model</span><span class="o">-&gt;</span><span class="na">getBar</span><span class="p">();</span> <span class="c1"># Bar</span>
 <span class="nx">Php</span><span class="o">::</span><span class="na">hijackSet</span><span class="p">(</span><span class="nv">$model</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">);</span>
-<span class="k">echo</span> <span class="nv">$model</span><span class="o">-&gt;</span><span class="na">getBar</span><span class="p">();</span> <span class="c1"># Foo</span>
+<span class="nv">$model</span><span class="o">-&gt;</span><span class="na">getBar</span><span class="p">();</span> <span class="c1"># Foo</span>
 </pre></div>
 </td></tr></table></div>
 <ul class="simple">
@@ -291,7 +291,63 @@
 </td></tr></table></div>
 <div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nv">$model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">();</span>
-<span class="k">echo</span> <span class="nx">Php</span><span class="o">::</span><span class="na">hijackGet</span><span class="p">(</span><span class="nv">$model</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">);</span> <span class="c1"># bar</span>
+<span class="nx">Php</span><span class="o">::</span><span class="na">hijackGet</span><span class="p">(</span><span class="nv">$model</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">);</span> <span class="c1"># bar</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Get bool value from variable</p></li>
+</ul>
+<div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * @param $value</span>
+<span class="sd"> *</span>
+<span class="sd"> * @return bool</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">boolval</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">Php</span><span class="o">::</span><span class="na">boolval</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>      <span class="c1"># true</span>
+<span class="nx">Php</span><span class="o">::</span><span class="na">boolval</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>      <span class="c1"># false</span>
+<span class="nx">Php</span><span class="o">::</span><span class="na">boolval</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>   <span class="c1"># true</span>
+<span class="nx">Php</span><span class="o">::</span><span class="na">boolval</span><span class="p">(</span><span class="s1">&#39;yes&#39;</span><span class="p">);</span>  <span class="c1"># true</span>
+<span class="nx">Php</span><span class="o">::</span><span class="na">boolval</span><span class="p">(</span><span class="s1">&#39;true&#39;</span><span class="p">);</span> <span class="c1"># true</span>
+<span class="nx">Php</span><span class="o">::</span><span class="na">boolval</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">);</span>    <span class="c1"># false</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Returns constants of given class</p></li>
+</ul>
+<div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * @param string $class</span>
+<span class="sd"> *</span>
+<span class="sd"> * @return array</span>
+<span class="sd"> * @throws VairogsException</span>
+<span class="sd"> * @throws ReflectionException</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">getClassConstants</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$class</span><span class="p">)</span><span class="o">:</span> <span class="k">array</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Response</span><span class="p">;</span>
+
+<span class="nx">Php</span><span class="o">::</span><span class="na">getClassConstants</span><span class="p">(</span><span class="nx">Response</span><span class="o">::</span><span class="na">class</span><span class="p">);</span> <span class="c1"># [&#39;HTTP_CONTINUE&#39; =&gt; 100, &#39;HTTP_SWITCHING_PROTOCOLS&#39; =&gt; 101, ...]</span>
 </pre></div>
 </td></tr></table></div>
 </div>

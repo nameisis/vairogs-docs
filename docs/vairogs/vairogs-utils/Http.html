@@ -222,10 +222,10 @@
 <span class="sd"> *</span>
 <span class="sd"> * @return bool</span>
 <span class="sd"> */</span>
-<span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">useHttps</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span><span class="p">;</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">isHttps</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span><span class="p">;</span>
 </pre></div>
 </td></tr></table></div>
-<div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">Http</span><span class="o">::</span><span class="na">useHttps</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">);</span> <span class="c1"># true or false</span>
+<div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">Http</span><span class="o">::</span><span class="na">isHttps</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">);</span> <span class="c1"># true or false</span>
 </pre></div>
 </td></tr></table></div>
 <ul class="simple">
@@ -280,6 +280,23 @@
 <span class="nx">Http</span><span class="o">::</span><span class="na">isAbsolute</span><span class="p">(</span><span class="s1">&#39;docs.vairogs.com&#39;</span><span class="p">);</span> <span class="c1"># false</span>
 
 <span class="nx">Http</span><span class="o">::</span><span class="na">isAbsolute</span><span class="p">(</span><span class="s1">&#39;//docs.vairogs.com&#39;</span><span class="p">);</span> <span class="c1"># true</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Return all supported <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Methods</span></code></p></li>
+</ul>
+<div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * @return array</span>
+<span class="sd"> * @throws ReflectionException</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">getMethods</span><span class="p">()</span><span class="o">:</span> <span class="k">array</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">Http</span><span class="o">::</span><span class="na">getMethods</span><span class="p">();</span> <span class="c1"># [&#39;HEAD&#39;, &#39;GET&#39;, &#39;POST&#39;, ...]</span>
 </pre></div>
 </td></tr></table></div>
 </div>
