@@ -29,19 +29,18 @@ Php
     /**
      * @param callable $function
      * @param object $clone
-     * @param null|string $class
      * @param bool $return
      *
      * @return mixed
      */
-    public static function call(callable $function, object $clone, ?string $class = null, bool $return = false);
+    public static function call(callable $function, object $clone, bool $return = false);
 
 .. code-block:: php
 
     $model = new Foo();
     echo Php::call(function() use ($model){
         return $model->upper('test');
-    }, $model, null, true); # Test
+    }, $model, true); # Test
 
 - Set value to any class variable (``any visibility``)
 
