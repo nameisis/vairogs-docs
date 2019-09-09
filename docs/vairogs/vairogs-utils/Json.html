@@ -186,6 +186,53 @@
 <div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">Vairogs\Utils\Json</span><span class="p">;</span>
 </pre></div>
 </td></tr></table></div>
+<p>Json class is using basic json functions but making them safer</p>
+<ul class="simple">
+<li><p>json_encode</p></li>
+</ul>
+<div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * @param $value</span>
+<span class="sd"> * @param int $flags</span>
+<span class="sd"> *</span>
+<span class="sd"> * @return string</span>
+<span class="sd"> * @throws JsonException</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">encode</span><span class="p">(</span><span class="nv">$value</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$flags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">Json</span><span class="o">::</span><span class="na">encode</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span> <span class="c1"># &#39;[1,2,3]&#39;</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>json_decode</p></li>
+</ul>
+<div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * @param string $json</span>
+<span class="sd"> * @param int $flags</span>
+<span class="sd"> *</span>
+<span class="sd"> * @return mixed</span>
+<span class="sd"> * @throws JsonException</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">decode</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$json</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$flags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<div class="highlight-php notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">Json</span><span class="o">::</span><span class="na">decode</span><span class="p">(</span><span class="s1">&#39;[1,2,3]&#39;</span><span class="p">);</span> <span class="c1"># [1,2,3]</span>
+</pre></div>
+</td></tr></table></div>
 </div>
 
 
