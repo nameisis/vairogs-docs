@@ -106,6 +106,8 @@ config_block = {
 # use PHP as the primary domain
 primary_domain = 'php'
 
+html_favicon = 'favicon.ico'
+
 # set url for API links
 api_url = 'http://github.com/vairogs/vairogs-docs/master/%s'
 
